@@ -19,7 +19,7 @@ test('optimize a JPG', async t => {
 
 test('support mozjpeg options', async t => {
 	const buf = await readFile(path.join(__dirname, 'fixture.jpg'));
-	const data = await m({progressive: false})(buf);
+	const data = await m({revert: true, progressive: false})(buf);
 
 	t.false(isProgressive.buffer(data));
 });

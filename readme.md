@@ -1,4 +1,4 @@
-# imagemin-mozjpeg ![GitHub Actions Status](https://github.com/imagemin/imagemin-mozjpeg/workflows/test/badge.svg?branch=master)
+# imagemin-mozjpeg-jpegtran ![GitHub Actions Status](https://github.com/imagemin/imagemin-mozjpeg/workflows/test/badge.svg?branch=master)
 
 > [Imagemin](https://github.com/imagemin/imagemin) plugin for [mozjpeg](https://github.com/mozilla/mozjpeg)
 
@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install imagemin-mozjpeg
+$ npm install imagemin-mozjpeg-jpegtran
 ```
 
 
@@ -14,13 +14,13 @@ $ npm install imagemin-mozjpeg
 
 ```js
 const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminMozjpegJpegtran = require('imagemin-mozjpeg-jpegtran');
 
 (async () => {
 	await imagemin(['images/*.jpg'], {
 		destination: 'build/images',
 		plugins: [
-			imageminMozjpeg()
+			imageminMozjpegJpegtran()
 		]
 	});
 
@@ -31,17 +31,29 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 
 ## API
 
-### imageminMozjpeg([options])(buffer)
+### imageminMozjpegJpegtran([options])(buffer)
 
 Returns a `Promise<Buffer>`.
 
 #### options
 
-##### quality
+##### copy
 
-Type: `number`
+Type: `string`<br>
+Default: `none`
 
-Compression quality, in range `0` (worst) to `100` (perfect).
+Set copy mode.
+
+- `none` Copy no extra markers from source file
+- `comments` Copy only comment markers
+- `all` Copy all extra markers
+
+##### optimize
+
+Type: `boolean`<br>
+Default: `true`
+
+Optimize Huffman table (smaller file, but slow compression)
 
 ##### progressive
 
@@ -49,13 +61,6 @@ Type: `boolean`<br>
 Default: `true`
 
 `false` creates baseline JPEG file.
-
-##### targa
-
-Type: `boolean`<br>
-Default: `false`
-
-Input file is Targa format (usually not needed).
 
 ##### revert
 
@@ -71,100 +76,11 @@ Default: `false`
 
 Disable progressive scan optimization.
 
-##### dcScanOpt
-
-Type: `number`<br>
-Default: `1`
-
-Set DC scan optimization mode.
-
-- `0` One scan for all components
-- `1` One scan per component
-- `2` Optimize between one scan for all components and one scan for 1st component plus one scan for remaining components
-
-##### trellis
-
-Type: `boolean`<br>
-Default: `true`
-
-[Trellis optimization](https://en.wikipedia.org/wiki/Trellis_quantization).
-
-##### trellisDC
-
-Type: `boolean`<br>
-Default: `true`
-
-Trellis optimization of DC coefficients.
-
-##### tune
-
-Type: `string`<br>
-Default: `hvs-psnr`
-
-Set Trellis optimization method. Available methods: `psnr`, `hvs-psnr`, `ssim`, `ms-ssim`
-
-##### overshoot
-
-Type: `boolean`<br>
-Default: `true`
-
-Black-on-white deringing via overshoot.
-
-##### arithmetic
-
-Type: `boolean`<br>
-Default: `false`
-
-Use [arithmetic coding](https://en.wikipedia.org/wiki/Arithmetic_coding).
-
-##### dct
-
-Type: `string`<br>
-Default: `int`
-
-Set [DCT](https://en.wikipedia.org/wiki/Discrete_cosine_transform) method:
-
-- `int` Use integer DCT
-- `fast` Use fast integer DCT (less accurate)
-- `float` Use floating-point DCT
-
-##### quantBaseline
-
-Type: `boolean`<br>
-Default: `false`
-
-Use 8-bit quantization table entries for baseline JPEG compatibility.
-
-##### quantTable
-
-Type: `number`
-
-Use predefined quantization table.
-
-- `0` JPEG Annex K
-- `1` Flat
-- `2` Custom, tuned for MS-SSIM
-- `3` ImageMagick table by N. Robidoux
-- `4` Custom, tuned for PSNR-HVS
-- `5` Table from paper by Klein, Silverstein and Carney
-
-##### smooth
-
-Type: `number`
-
-Set the strength of smooth dithered input. (1...100)
-
 ##### maxMemory
 
 Type: `number`
 
 Set the maximum memory to use in kilobytes.
-
-##### sample
-
-Type: `string[]`
-
-Set component sampling factors. Each item should be in the format `HxV`, for example `2x1`.
 
 #### buffer
 

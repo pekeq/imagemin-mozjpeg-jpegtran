@@ -1,25 +1,14 @@
 {
-  "name": "imagemin-mozjpeg",
-  "version": "9.0.0",
-  "description": "Imagemin plugin for mozjpeg",
+  "name": "imagemin-mozjpeg-jpegtran",
+  "version": "0.1.0",
+  "description": "Imagemin plugin for mozjpeg-jpegtran",
   "license": "MIT",
-  "repository": "imagemin/imagemin-mozjpeg",
+  "repository": "pekeq/imagemin-mozjpeg-jpegtran",
   "author": {
-    "name": "Kevin Mårtensson",
-    "email": "kevinmartensson@gmail.com",
-    "url": "github.com/kevva"
+    "name": "Hideo Matsumoto",
+    "email": "pekeq.9@gmail.com",
+    "url": "https://github.com/pekeq"
   },
-  "maintainers": [
-    {
-      "name": "Sindre Sorhus",
-      "email": "sindresorhus@gmail.com",
-      "url": "sindresorhus.com"
-    },
-    {
-      "name": "Shinnosuke Watanabe",
-      "url": "github.com/shinnn"
-    }
-  ],
   "engines": {
     "node": ">=10"
   },
@@ -38,12 +27,13 @@
     "jpg",
     "minify",
     "mozjpeg",
+    "jpegtran",
     "optimize"
   ],
   "dependencies": {
     "execa": "^4.0.0",
     "is-jpg": "^2.0.0",
-    "mozjpeg": "^7.0.0"
+    "mozjpeg-jpegtran": "github:pekeq/mozjpeg-jpegtran-bin"
   },
   "devDependencies": {
     "ava": "^3.8.0",
