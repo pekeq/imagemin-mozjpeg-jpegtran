@@ -1,6 +1,6 @@
-# imagemin-mozjpeg-jpegtran ![GitHub Actions Status](https://github.com/imagemin/imagemin-mozjpeg/workflows/test/badge.svg?branch=master)
+# imagemin-mozjpeg-jpegtran ![GitHub Actions Status](https://github.com/pekeq/imagemin-mozjpeg-jpegtran/actions/workflows/test.yml/badge.svg?branch=master)
 
-> [Imagemin](https://github.com/imagemin/imagemin) plugin for [mozjpeg](https://github.com/mozilla/mozjpeg)
+> [Imagemin](https://github.com/imagemin/imagemin) plugin for [mozjpeg](https://github.com/mozilla/mozjpeg) jpegtran command
 
 
 ## Install
