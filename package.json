@@ -1,7 +1,7 @@
 {
   "name": "imagemin-mozjpeg-jpegtran",
   "version": "0.1.0",
-  "description": "Imagemin plugin for mozjpeg-jpegtran",
+  "description": "Imagemin plugin for jpegtran (mozjpeg version)",
   "license": "MIT",
   "repository": "pekeq/imagemin-mozjpeg-jpegtran",
   "author": {

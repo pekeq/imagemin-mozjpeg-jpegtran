@@ -1,6 +1,6 @@
 # imagemin-mozjpeg-jpegtran ![GitHub Actions Status](https://github.com/pekeq/imagemin-mozjpeg-jpegtran/actions/workflows/test.yml/badge.svg?branch=master)
 
-> [Imagemin](https://github.com/imagemin/imagemin) plugin for [mozjpeg](https://github.com/mozilla/mozjpeg) jpegtran command
+> [Imagemin](https://github.com/imagemin/imagemin) plugin for jpegtran ([mozjpeg](https://github.com/mozilla/mozjpeg) version) command
 
 
 ## Install
@@ -91,4 +91,4 @@ Buffer to optimize.
 
 ## License
 
-MIT © [Imagemin](https://github.com/imagemin)
+MIT © [Imagemin](https://github.com/imagemin), Hideo Matsumoto
