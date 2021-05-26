@@ -1,7 +1,7 @@
 'use strict';
 const execa = require('execa');
 const isJpg = require('is-jpg');
-const mozjpeg = require('mozjpeg-jpegtran');
+const mozjpeg = require('mozjpeg-jpegtran-bin');
 
 module.exports = options => async buffer => {
 	options = {

@@ -33,7 +33,7 @@
   "dependencies": {
     "execa": "^4.0.0",
     "is-jpg": "^2.0.0",
-    "mozjpeg-jpegtran": "github:pekeq/mozjpeg-jpegtran-bin"
+    "mozjpeg-jpegtran-bin": "^0.2.0"
   },
   "devDependencies": {
     "ava": "^3.8.0",
